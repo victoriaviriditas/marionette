@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marionette — A Hand-Tracked Knight</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="grain"></div>
+
+  <header class="masthead">
+    <div class="crest">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1">
+        <path d="M12 2 L20 6 V13 C20 17 16 21 12 22 C8 21 4 17 4 13 V6 Z" />
+        <path d="M12 8 V16 M8 12 H16" />
+      </svg>
+    </div>
+    <h1 class="title">Marionette</h1>
+    <p class="subtitle">a hand-tracked duel · №&nbsp;II</p>
+  </header>
+
+  <main class="stage">
+    <canvas id="scene"></canvas>
+
+    <div class="vignette top"></div>
+    <div class="vignette bottom"></div>
+
+    <aside class="hud" id="hud">
+      <div class="hud-row">
+        <span class="hud-label">status</span>
+        <span class="hud-value" id="status">awaiting camera</span>
+      </div>
+      <div class="hud-row">
+        <span class="hud-label">left hand</span>
+        <span class="hud-value" id="leftHand">—</span>
+      </div>
+      <div class="hud-row">
+        <span class="hud-label">right hand</span>
+        <span class="hud-value" id="rightHand">—</span>
+      </div>
+      <div class="hud-row">
+        <span class="hud-label">fps</span>
+        <span class="hud-value" id="fps">—</span>
+      </div>
+    </aside>
+
+    <button class="start-btn" id="startBtn">
+      <span class="start-btn__label">Raise the curtain</span>
+      <span class="start-btn__hint">grant camera access to begin</span>
+    </button>
+
+    <video id="webcam" autoplay playsinline muted></video>
+  </main>
+
+  <footer class="colophon">
+    <span>Act II · The Duel</span>
+    <span class="sep">—</span>
+    <span>Left hand commands the knight on the left · right hand commands the knight on the right</span>
+    <span class="sep">—</span>
+    <span>Built with MediaPipe</span>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
